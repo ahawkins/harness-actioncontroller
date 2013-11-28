@@ -6,6 +6,8 @@ events.each do |name|
   ActiveSupport::Notifications.subscribe "#{name}.action_controller" do |*args|
     event = ActiveSupport::Notifications::Event.new(*args)
 
-    Harness.timing "action_controller.#{name}", event.duration
+    controller, action = event.payload.fetch(:controller), event.payload.fetch(:action)
+
+    Harness.timing "action_controller.#{name}.#{controller}.#{action}", event.duration
   end
 end

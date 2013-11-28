@@ -16,6 +16,14 @@ Or install it yourself as:
 
     $ gem install harness-actioncontroller
 
+## Usage
+
+All you need to do is require the file:
+
+```ruby
+require 'harness-actioncontroller'
+```
+
 ## Contributing
 
 1. Fork it
