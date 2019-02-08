@@ -1,6 +1,6 @@
 require_relative 'test_helper'
 
-class ActionControllerIntegration < MiniTest::Unit::TestCase
+class ActionControllerIntegration < MiniTest::Test
   def test_logs_write_fragment
     instrument "write_fragment"
 
