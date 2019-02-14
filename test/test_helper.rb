@@ -1,9 +1,10 @@
 require 'bundler/setup'
+require 'active_support'
 require 'harness/action_controller'
-require 'minitest/unit'
 require 'minitest/autorun'
+require 'minitest/unit'
 
-class MiniTest::Unit::TestCase
+class MiniTest::Test
   def setup
     Harness.config.collector = Harness::FakeCollector.new
     Harness.config.queue = Harness::SyncQueue.new
